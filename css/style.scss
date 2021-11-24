@@ -23,7 +23,8 @@ $box_shadow: 0 1rem 1rem rgba(0,0,0,0.05);
 
 @mixin grid($val){
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    display: -ms-grid;
+    -ms-grid-columns: repeat(auto-fit, minmax($val, 1fr));
     gap: 1.5rem;
 }
 
@@ -37,7 +38,8 @@ html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scroll-margin-top: 8.5rem;
+    scroll-snap-margin-top: 8.5rem;
+    scroll-margin-top:  8.5rem;
 
     &::-webkit-scrollbar{
         width: 1rem;
@@ -84,6 +86,7 @@ section{
 }
 
 .home_header{
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     left: 0;
