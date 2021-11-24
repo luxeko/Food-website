@@ -24,7 +24,7 @@ $box_shadow: 0 1rem 1rem rgba(0,0,0,0.05);
 @mixin grid($val){
     display: grid;
     display: -ms-grid;
-    -ms-grid-columns: repeat(auto-fit, minmax($val, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
     gap: 1.5rem;
 }
 
@@ -34,12 +34,14 @@ $box_shadow: 0 1rem 1rem rgba(0,0,0,0.05);
     color:  $green;
 }
 
+
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-snap-margin-top: 8.5rem;
-    scroll-margin-top:  8.5rem;
+    // scroll-margin-top:  8.5rem;
 
     &::-webkit-scrollbar{
         width: 1rem;
@@ -518,6 +520,47 @@ section{
                     font-size: 1.5rem;
                     color: $black;
                 }
+            }
+        }
+    }
+}
+@mixin grid2($val2){
+    
+}
+.grid_new{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+    h3{
+        color: #27ae60
+    }
+    .abcd{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+        background-color: #130f40;
+    }
+    .news_container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1.5rem;
+        background-color: #130f40;
+        height: 600px;
+
+        .box_father1{
+            border: #27ae60 1px solid;
+            height: 100%;
+        }
+        .box_father2{
+            display: grid;
+            
+            grid-template-columns:repeat(2, 1fr);
+            grid-gap: 20px;
+            height: 100%;
+
+            .box_child{
+                border: #27ae60 1px solid;
             }
         }
     }
